@@ -1,3 +1,5 @@
+Ladies Figma Design: https://www.figma.com/file/6cCuHNeXD1eIoiRAovwUjq/Ladies-Freebie?node-id=0%3A1
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

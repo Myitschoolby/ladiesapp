@@ -1,0 +1,9 @@
+.app {
+    height: calc(100vh - 100px);
+
+    background-image: url('/images/bg.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    padding: 50px;
+}

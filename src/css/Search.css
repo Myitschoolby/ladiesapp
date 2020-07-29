@@ -1,0 +1,21 @@
+.header-search {
+    margin-right: 100px;
+}
+
+.header-search input {
+    width: calc(440px - 110px);
+    padding: 22px 80px 22px 30px;
+    border: 1px solid #E7E7E7;
+    border-radius: 24px;
+
+    background-image: url('/images/ico_search.png');
+    background-position: center right 30px;
+    background-repeat: no-repeat;
+}
+
+.header-search input,
+.header-search input::placeholder {
+    font-size: 24px;
+    font-weight: bold;
+    color: #473889;
+  }

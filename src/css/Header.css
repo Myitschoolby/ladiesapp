@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10%;
+    margin-bottom: 80px;
+}
+
+.header_logo {
+    margin-right: auto;
+
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 32px;
+}
+
+.header_logo a {
+    color: #342869;
+    text-decoration: none;
+}
+
+.header_logo img {
+    vertical-align: middle;
+    margin-left: 40px;
+}
