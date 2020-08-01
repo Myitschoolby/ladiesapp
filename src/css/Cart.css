@@ -13,6 +13,7 @@
 
 .header_cart_button:hover {
     background-image: url('/images/ico_cart3.png');
+    transform: scale(1.2);
 }
 .header_cart_button:active {
     background-image: url('/images/ico_cart2.png');

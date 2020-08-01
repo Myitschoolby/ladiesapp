@@ -6,7 +6,7 @@ class Cart extends Component {
     render() {
         return (
             <div className="header_cart">
-                <button className="header_cart_button"><span></span></button>
+                <button className="header_cart_button"></button>
             </div>
         );
     }
