@@ -1,0 +1,240 @@
+.button {
+    cursor: pointer;
+}
+
+.ico_filter,
+.ico_filter::before,
+.ico_filter::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #464185;
+    position: relative;
+    margin: 0 auto;
+}
+
+.ico_filter {
+    width: 22px;
+    top: -5px;
+}
+
+.ico_filter::before {
+    width: 16px;
+    top: 5px;
+}
+
+.ico_filter::after {
+    width: 10px;
+    top: 8px;
+}
+
+.ico_arrow,
+.ico_arrow::before,
+.ico_arrow::after {
+    display: block;
+    height: 2px;
+    background-color: #464185;
+}
+
+.ico_arrow {
+    position: relative;
+    width: 22px;
+}
+
+.ico_arrow::before,
+.ico_arrow::after {
+    content: '';
+    position: absolute;
+
+    transform-origin: top left;
+}
+
+.ico_arrow::before {
+    width: 10px;
+    transform: rotate(45deg);
+
+    left: 0;
+    top: -.5px;
+}
+
+.ico_arrow::after {
+    width: 9px;
+    transform: rotate(-45deg);
+
+    left: -1px;
+    top: .3px;
+}
+
+.ico_arrow-right {
+    transform: rotate(180deg);
+}
+
+.catalog {
+    display: flex;
+}
+
+.catalog_products {
+    width: 70%;
+    overflow: hidden;
+}
+
+.catalog_products_header,
+.catalog_products_filter,
+.catalog_products_list ul {
+    display: flex;
+}
+
+.catalog_products_header {
+    margin-bottom: 50px;
+}
+
+.catalog_products_filter_name {
+    font-size: 60px;
+    line-height: 72px;
+    font-weight: bold;
+    color: #473889;
+}
+
+.catalog_products_filter_select {
+    margin-left: 100px;
+}
+
+.catalog_products_filter_select .button {
+    border: 0;
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    background-color: #fff;
+    box-shadow: 0 20px 40px #A0BBC8;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalog_products_navigation {
+    display: flex;
+    margin-left: auto;
+}
+
+.catalog_products_navigation .button {
+    border: 1px solid #E7E7E7;
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: .3;
+}
+
+.catalog_products_navigation .button:not(:last-child) {
+    margin-right: 10px;
+}
+
+.catalog_products_navigation .button:hover {
+    opacity: 1;
+}
+
+.catalog_products_list {
+    position: relative;
+    padding-bottom: 60px;
+}
+
+.catalog_products_list ul {
+    list-style: none;
+}
+
+.catalog_products_list::after {
+    content: '';
+    display: block;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 20%, #fff);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.catalog_product {
+    padding: 8px;
+    border-radius: 40px;
+    background-color: #fff;
+    box-shadow: 0 20px 40px #A0BBC8;
+}
+
+.catalog_product:not(:last-child) {
+    margin-right: 40px;
+}
+
+.catalog_product_thumbnail {
+    height: 300px;
+    padding: 60px 40px;
+    overflow: hidden;
+}
+
+.catalog_product_thumbnail img {
+    height: 100%;
+}
+
+.catalog_product_description {
+    position: relative;
+
+    background-color: #E7DDF2;
+    border-radius: 30px;
+    padding: 25px;
+}
+
+.catalog_product_name {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 32px;
+    color: #473889;
+    margin-bottom: 5px;
+}
+
+.catalog_product_caption {
+    font-size: 18px;
+    line-height: 22px;
+    color: #988FBB;
+    margin-bottom: 30px;
+}
+
+.catalog_product_price {
+    font-size: 20px;
+    line-height: 24px;
+    color: #413382;
+}
+
+.catalog_product_description .button_cart {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+
+    border: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 20px 40px #A0BBC8;
+}
+
+.catalog_product:hover .catalog_product_description {
+    background-color: #776FC3;
+}
+
+.catalog_product:hover .catalog_product_name,
+.catalog_product:hover .catalog_product_caption,
+.catalog_product:hover .catalog_product_price {
+    color: #fff;
+}
+
+.catalog_product:hover .button_cart {
+    background-color: #574A97;
+    box-shadow: none;
+}
