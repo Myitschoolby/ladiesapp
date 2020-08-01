@@ -26,7 +26,7 @@ class Products extends Component {
                                 <div className="catalog_product_name">Face Mask</div>
                                 <div className="catalog_product_caption">Grape Fruit</div>
                                 <div className="catalog_product_price">$16,00</div>
-                                <button className="button button_cart"></button>
+                                <button className="button button_cart"><span></span></button>
                             </div>
                         </li>
                         <li className="catalog_product">
@@ -35,7 +35,7 @@ class Products extends Component {
                                 <div className="catalog_product_name">Face Mask</div>
                                 <div className="catalog_product_caption">Grape Fruit</div>
                                 <div className="catalog_product_price">$16,00</div>
-                                <button className="button button_cart"></button>
+                                <button className="button button_cart"><span></span></button>
                             </div>
                         </li>
                         <li className="catalog_product">
@@ -44,7 +44,7 @@ class Products extends Component {
                                 <div className="catalog_product_name">Face Mask</div>
                                 <div className="catalog_product_caption">Grape Fruit</div>
                                 <div className="catalog_product_price">$16,00</div>
-                                <button className="button button_cart"></button>
+                                <button className="button button_cart"><span></span></button>
                             </div>
                         </li>
                         <li className="catalog_product">
@@ -53,7 +53,7 @@ class Products extends Component {
                                 <div className="catalog_product_name">Face Mask</div>
                                 <div className="catalog_product_caption">Grape Fruit</div>
                                 <div className="catalog_product_price">$16,00</div>
-                                <button className="button button_cart"></button>
+                                <button className="button button_cart"><span></span></button>
                             </div>
                         </li>
                     </ul>

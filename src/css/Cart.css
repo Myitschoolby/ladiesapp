@@ -1,14 +1,19 @@
 .header_cart_button {
     border: 0;
     background-color: transparent;
-
     width: 32px;
     height: 32px;
-
     background-image: url('/images/ico_cart.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
-
     cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+
+.header_cart_button:hover {
+    background-image: url('/images/ico_cart3.png');
+}
+.header_cart_button:active {
+    background-image: url('/images/ico_cart2.png');
 }

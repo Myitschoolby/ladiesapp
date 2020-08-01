@@ -100,17 +100,50 @@
 }
 
 .catalog_products_filter_select .button {
+    position: relative;
     border: 0;
     border-radius: 50%;
     width: 72px;
     height: 72px;
     background-color: #fff;
     box-shadow: 0 20px 40px #A0BBC8;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.catalog_products_filter_select .button:hover {
+    box-shadow: inset 0px 0px 5px rgba(158, 158, 158, 0.9);
+    animation: linear color 4s infinite;
+    background-color: #fff;
+}
+
+@keyframes color {
+    from {
+        background-color: #fff;
+    }
+
+    to {
+        background-color: #E2F5FD;
+    }
+}
+
+.catalog_products_filter_select .button:hover .ico_filter,
+.catalog_products_filter_select .button:hover .ico_filter:before,
+.catalog_products_filter_select .button:hover .ico_filter:after {
+    background-color: rgb(0, 0, 0);
+    animation: linear color2 2s infinite;
+}
+
+@keyframes color2 {
+    from {
+        opacity: 1.0;
+    }
+
+    to {
+        opacity: 0.0;
+    }
 }
 
 .catalog_products_navigation {
@@ -221,12 +254,33 @@
     border-radius: 50%;
     background-color: #fff;
     box-shadow: 0 20px 40px #A0BBC8;
+    overflow: hidden;
 }
 
-.catalog_product_description .button_cart:before {
+.catalog_product_description .button_cart span:before {
     content: '\FF0B';
     /* content: '+';  в таком случае жирный + получается*/
     font-size: 30px;
+}
+
+.catalog_product_description .button_cart span:after {
+    content: url(/images/ico_cart2.png);
+    position: absolute;
+    top: 7px;
+    left: -30px;
+    transition: all 200ms ease;
+}
+
+.button_cart:hover span:before {
+    content: '';
+}
+
+.button_cart:hover span:after {
+    left: 11px;
+}
+
+.button_cart:active span:after {
+    content: url(/images/ico_cart3.png);
 }
 
 .catalog_product:hover .catalog_product_description {
@@ -245,8 +299,8 @@
     box-shadow: none;
 }
 
-.button_cart:hover .button_cart {
-    transform: rotate(80deg);
+.button_cart:hover .catalog_product .button_cart {
+    background-color: #ffff;
 }
 
 /* Accessories */
@@ -280,7 +334,6 @@
     justify-content: space-between;
 }
 
-
 .catalog_accessory {
     display: flex;
     border: 1px solid #E7E7E7;
@@ -289,6 +342,10 @@
     width: calc(90% - 40px);
     margin-left: auto;
     justify-content: space-around;
+}
+
+.catalog_accessory_block {
+    cursor: pointer;
 }
 
 .catalog_accessory_block:not(:last-child) {
@@ -360,7 +417,7 @@
 }
 
 .catalog_accessory_block:hover .catalog_accessory {
-    border: none;
+    border: 1px solid #776FC3;
     background-color: #776FC3;
     width: calc(100% - 40px);
 }
