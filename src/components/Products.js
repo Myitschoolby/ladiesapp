@@ -94,14 +94,7 @@ class Products extends Component {
 
         if (currentFirstItemMl > 0) firstItemWidth += currentFirstItemMl;
 
-        console.log(parentWidth)
-        console.log(firstItemWidth)
-        console.log(lastItemWidth)
-        console.log(currentFirstItemMl)
-
         firstItem.style.marginLeft = `-${firstItemWidth}px`;
-
-        
     }
 
     componentDidMount() {
