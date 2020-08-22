@@ -43,17 +43,7 @@ class Products extends Component {
         });
     }
 
-    prevPage() {
-        // let prevPage = this.state.page - 1;
-
-        // if (prevPage >= 1) this.getProducts(prevPage);
-    }
-
-    nextPage(event) {
-        // let nextPage = this.state.page + 1;
-
-        // if (nextPage*5 <= this.state.count) this.getProducts(nextPage);
-
+    prevPage(event) {
         const parent = event.target.closest('.catalog_products');
 
         if (!parent) return;
@@ -63,17 +53,54 @@ class Products extends Component {
 
         if (!list || !firstItem) return;
         
-        let parentWidth = list.clientWidth;
         let firstItemStyles = window.getComputedStyle(firstItem);
         let firstItemWidth = firstItem.clientWidth;
 
         if (firstItemStyles.getPropertyValue('margin-right')) firstItemWidth += parseInt(firstItemStyles.getPropertyValue('margin-right'));
 
-        let currentFirstItemMl = Math.abs(parseInt(firstItem.style.marginLeft));
+        let currentFirstItemMl = firstItem.style.marginLeft ? Math.abs(parseInt(firstItem.style.marginLeft)) : 0;
+        
+        if (currentFirstItemMl > 0) firstItem.style.marginLeft = `-${currentFirstItemMl-firstItemWidth}px`;
+    }
+
+    nextPage(event) {
+        const parent = event.target.closest('.catalog_products');
+
+        if (!parent) return;
+
+        const list = parent.querySelector('.catalog_products_list > ul'),
+            countItems = list.querySelectorAll('li').length,
+            firstItem = list.querySelector('li:first-child');
+
+        if (!list || !firstItem) return;
+        
+        let parentWidth = list.clientWidth;
+        
+        let firstItemStyles = window.getComputedStyle(firstItem);
+        let firstItemWidth = firstItem.clientWidth;
+
+        if (firstItemStyles.getPropertyValue('margin-right')) firstItemWidth += parseInt(firstItemStyles.getPropertyValue('margin-right'));
+
+        let firstItemWidthFix = firstItemWidth;
+
+        let currentFirstItemMl = firstItem.style.marginLeft ? Math.abs(parseInt(firstItem.style.marginLeft)) : 0;
         
         if (currentFirstItemMl > 0) firstItemWidth += currentFirstItemMl;
 
-        firstItem.style.marginLeft = `-${firstItemWidth}px`;
+        let stopPount = (countItems*firstItemWidthFix)-parentWidth;
+
+        // console.log("countItems", countItems);
+        // console.log("firstItemWidthFix", firstItemWidthFix);
+        // console.log("parentWidth", parentWidth);
+        // console.log("stopPount", stopPount);
+        // console.log("currentFirstItemMl", currentFirstItemMl);
+
+        if (currentFirstItemMl < stopPount) {
+            firstItem.style.marginLeft = `-${firstItemWidth}px`;
+        } else {
+            let nextPage = this.state.page + 1;
+            if (nextPage*5 <= this.state.count) this.getProducts(nextPage);
+        }
     }
 
     componentDidMount() {
