@@ -97,6 +97,7 @@
 
 .catalog_products_filter_select {
     margin-left: 100px;
+    position: relative;
 }
 
 .catalog_products_filter_select .button {
@@ -117,6 +118,44 @@
     box-shadow: inset 0px 0px 5px rgba(158, 158, 158, 0.9);
     animation: linear color 4s infinite;
     background-color: #fff;
+}
+
+.catalog_products_filter_list {
+    display: none;
+}
+
+.catalog_products_filter_list.active {
+    display: block;
+
+    position: absolute;    
+    z-index: 5;
+    
+    white-space: nowrap;
+}
+
+.catalog_products_filter_list ul {
+    list-style: none;
+}
+
+.catalog_products_filter_list li {
+    display: block;
+
+    font-weight: bold;
+    color: #000;
+
+    border-radius: 7px;
+    background-color: #fff;
+    padding: 15px 20px;
+    margin: 5px 0;
+
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .2);
+}
+
+.catalog_products_filter_list li:hover {
+    background-color: #e5f7ff;
+    color: #473889;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .4);
+    cursor: pointer;
 }
 
 @keyframes color {

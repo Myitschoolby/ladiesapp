@@ -3,120 +3,160 @@
       "thumbnail": "http://placehold.it/300x300",
       "name": "ipsum laboris",
       "caption": "sint exercitation",
-      "price": "$51.07"
+      "price": "$51.07",
+      "top": "false",
+      "hot": "false"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "tempor reprehenderit",
       "caption": "ea est",
-      "price": "$83.90"
+      "price": "$83.90",
+      "top": "false",
+      "hot": "false"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "voluptate laboris",
       "caption": "quis incididunt",
-      "price": "$59.89"
+      "price": "$59.89",
+      "top": "false",
+      "hot": "false"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "et ut",
       "caption": "dolore dolore",
-      "price": "$44.63"
+      "price": "$44.63",
+      "top": "false",
+      "hot": "true"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "elit et",
       "caption": "et eu",
-      "price": "$12.71"
+      "price": "$12.71",
+      "top": "false",
+      "hot": "false"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "magna fugiat",
       "caption": "ea dolore",
-      "price": "$60.31"
+      "price": "$60.31",
+      "top": "false",
+      "hot": "false"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "enim dolor",
       "caption": "esse elit",
-      "price": "$24.89"
+      "price": "$24.89",
+      "top": "true",
+      "hot": "true"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "id occaecat",
       "caption": "sunt labore",
-      "price": "$50.24"
+      "price": "$50.24",
+      "top": "false",
+      "hot": "false"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "cupidatat ad",
       "caption": "elit duis",
-      "price": "$29.09"
+      "price": "$29.09",
+      "top": "true",
+      "hot": "false"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "fugiat et",
       "caption": "ea culpa",
-      "price": "$48.67"
+      "price": "$48.67",
+      "top": "true",
+      "hot": "false"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "cupidatat reprehenderit",
       "caption": "excepteur fugiat",
-      "price": "$31.09"
+      "price": "$31.09",
+      "top": "true",
+      "hot": "false"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "dolor ipsum",
       "caption": "dolore cupidatat",
-      "price": "$24.76"
+      "price": "$24.76",
+      "top": "true",
+      "hot": "true"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "deserunt veniam",
       "caption": "elit ut",
-      "price": "$26.62"
+      "price": "$26.62",
+      "top": "true",
+      "hot": "true"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "nostrud sint",
       "caption": "aliquip laboris",
-      "price": "$21.37"
+      "price": "$21.37",
+      "top": "true",
+      "hot": "true"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "Lorem minim",
       "caption": "amet eiusmod",
-      "price": "$27.88"
+      "price": "$27.88",
+      "top": "true",
+      "hot": "true"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "eiusmod ex",
       "caption": "amet qui",
-      "price": "$38.95"
+      "price": "$38.95",
+      "top": "true",
+      "hot": "false"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "nostrud laborum",
       "caption": "reprehenderit amet",
-      "price": "$38.11"
+      "price": "$38.11",
+      "top": "false",
+      "hot": "true"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "occaecat adipisicing",
       "caption": "amet pariatur",
-      "price": "$78.58"
+      "price": "$78.58",
+      "top": "false",
+      "hot": "false"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "aliquip do",
       "caption": "deserunt nulla",
-      "price": "$29.73"
+      "price": "$29.73",
+      "top": "false",
+      "hot": "true"
     },
     {
       "thumbnail": "http://placehold.it/300x300",
       "name": "adipisicing Lorem",
       "caption": "quis culpa",
-      "price": "$40.79"
+      "price": "$40.79",
+      "top": "true",
+      "hot": "false"
     }
   ]

@@ -7,6 +7,12 @@ class Products extends Component {
         super();
 
         this.state = {
+            filter: {
+                current: 'Best Sellers',
+                currentIndex: 0,
+                list: ['Best Sellers', 'Best Price', 'All Products'],
+                listHtml: ''
+            },
             count: ProductsData.length,
             page: 1,
             list: []
@@ -14,12 +20,25 @@ class Products extends Component {
 
         this.prevPage = this.prevPage.bind(this);
         this.nextPage = this.nextPage.bind(this);
+
+        this.showFilter = this.showFilter.bind(this);
+        this.setFilter = this.setFilter.bind(this);
     }
 
     getProducts(page) {
         let count = 0;
+        let productsList = ProductsData;
 
-        const productsList = ProductsData.filter(function(product, index) {
+        if (this.state.filter.currentIndex != 2) {
+            productsList = productsList.filter((product, index) => {
+                return (
+                    (this.state.filter.currentIndex == 0 && product.top == "true") || 
+                    (this.state.filter.currentIndex == 1 && product.hot == "true")
+                );
+            });
+        }
+
+        productsList = productsList.filter(function(product, index) {
             count++;
             return count <= page * 5;
         });
@@ -41,6 +60,11 @@ class Products extends Component {
             page: page,
             list: list
         });
+    }
+
+    firstPage() {
+        const firstItem = document.querySelector('.catalog_products_list li:first-child');  
+        firstItem.style.marginLeft = "0px";
     }
 
     prevPage(event) {
@@ -89,18 +113,55 @@ class Products extends Component {
 
         let stopPount = (countItems*firstItemWidthFix)-parentWidth;
 
-        // console.log("countItems", countItems);
-        // console.log("firstItemWidthFix", firstItemWidthFix);
-        // console.log("parentWidth", parentWidth);
-        // console.log("stopPount", stopPount);
-        // console.log("currentFirstItemMl", currentFirstItemMl);
-
         if (currentFirstItemMl < stopPount) {
             firstItem.style.marginLeft = `-${firstItemWidth}px`;
         } else {
             let nextPage = this.state.page + 1;
             if (nextPage*5 <= this.state.count) this.getProducts(nextPage);
         }
+    }
+
+    setFilter = function(event) {
+        let filter = +event.target.dataset.filter;
+
+        let currentName = this.state.filter.list[filter];
+
+        if (!currentName) return;
+
+        this.setState({
+            filter: {
+                ...this.state.filter,
+                currentIndex: filter,
+                current: currentName
+            }
+        });
+
+        this.getProducts(1);
+        this.firstPage();
+    }
+
+    showFilter = function(event) {
+        let listHtml = this.state.filter.list.map((name, index) => {
+            return (
+                <li key={index} data-filter={index} onClick={this.setFilter}>{name}</li>
+            );
+        });
+
+        this.setState({
+            filter: {
+                ...this.state.filter,                
+                listHtml: listHtml
+            }
+        });
+
+        const listElem = document.querySelector('.catalog_products_filter_list');
+        listElem.classList.toggle('active');
+
+        // listElem.querySelectorAll('a').forEach(a => {
+        //     a.addEventListener('click', (event) => {
+        //         this.setFilter(event.target.dataset.filter);
+        //     });
+        // });
     }
 
     componentDidMount() {
@@ -113,10 +174,15 @@ class Products extends Component {
                 <div className="catalog_products_header">
                     <div className="catalog_products_filter">
                         <div className="catalog_products_filter_name">
-                            Best Sellers
+                            {this.state.filter.current}
                         </div>
                         <div className="catalog_products_filter_select">
-                            <button className="button button_filter_select"><i className="ico_filter"></i></button>
+                            <button onClick={this.showFilter} className="button button_filter_select"><i className="ico_filter"></i></button>
+                            <div className="catalog_products_filter_list">
+                                <ul>
+                                    {this.state.filter.listHtml}
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div className="catalog_products_navigation">
