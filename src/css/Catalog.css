@@ -311,14 +311,17 @@
     transition: all 200ms ease;
 }
 
+.button_cart.added span:before,
 .button_cart:hover span:before {
     content: '';
 }
 
+.button_cart.added span:after,
 .button_cart:hover span:after {
     left: 11px;
 }
 
+.button_cart.added span:after,
 .button_cart:active span:after {
     content: url(/images/ico_cart3.png);
 }

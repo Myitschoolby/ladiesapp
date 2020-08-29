@@ -1,3 +1,8 @@
+.header_cart {
+    display: flex;
+    align-items: center;
+}
+
 .header_cart_button {
     border: 0;
     background-color: transparent;
@@ -17,4 +22,9 @@
 }
 .header_cart_button:active {
     background-image: url('/images/ico_cart2.png');
+}
+
+.header_cart_couter {
+    margin-left: 20px;
+    font-size: 28px;
 }
