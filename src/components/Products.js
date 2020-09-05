@@ -43,8 +43,8 @@ function Products() {
 
             if (elem.nodeName == 'SPAN') elem = elem.closest('.button_cart');
 
-            elem.classList.toggle('added'); 
-            addCart(index);
+            if (addCart(index)) elem.classList.add('added');
+            else elem.classList.remove('added');
         };
 
 
@@ -56,7 +56,7 @@ function Products() {
                     <div className="catalog_product_name">{product.name}</div>
                     <div className="catalog_product_caption">{product.caption}</div>
                     <div className="catalog_product_price">{product.price}</div>
-                    <button onClick={(event) => { clickButton(event, index); }} className={cart.list.indexOf(index) != -1 ? "button button_cart added" : "button button_cart"}><span></span></button>
+                    <button onClick={(event) => { clickButton(event, index); }} className={cart.list.indexOf(index) === -1 ? "button button_cart" : "button button_cart added"}><span></span></button>
                 </div>
             </li>);
         });

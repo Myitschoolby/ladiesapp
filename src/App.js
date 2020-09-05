@@ -8,45 +8,51 @@ import Main from './components/Main';
 export const Context = React.createContext();
 
 function App() {
-	const [cart, setCart] = useState({
-        counter: 0,
-        list: []
+	const [cart, setCart] = useState(function() {
+		const obj = {
+			counter: 0,
+			list: []
+		};
+
+		let list = localStorage.getItem('cartList');
+		if (!list) return obj;
+
+		list = list.split(';');
+		if (list.length === 0) return obj;
+
+		let listInt = [];
+		listInt = list.map(function(value) {
+			return parseInt(value);
+		});
+
+		return {
+			counter: list.length,
+			list: listInt
+		};
 	});
 
-	const localStorageCartGet = function() {
-		let list = localStorage.getItem('cartList');
-		if (!list) return;
-
-		list = list.split(';')
-
-		if (list.length === 0) return;
-
-		setCart({
-			counter: list.length,
-			list: list
-		});
-	};
-
-	const localStorageCartSet = function() {
-		localStorage.setItem('cartList', cart.list.join(';'));
-	};
-
 	const addCart = function(productId) {
+		let status = false;
+
 		let list = cart.list;
-		
-		if (list.indexOf(productId) === -1) list.push(productId);
-		else list.splice(list.indexOf(productId), 1);
+
+		if (list.indexOf(productId) === -1) {
+			list.push(productId);
+			status = true;
+		} else {
+			list.splice(list.indexOf(productId), 1);
+		}
 
         setCart({
             counter: list.length,
             list: list
 		});
 
-		localStorageCartSet();
+		return status;
 	};
 
 	useEffect(() => {
-		localStorageCartGet();
+		localStorage.setItem('cartList', cart.list.join(';'));
 	}, [cart.counter]);
 	
 	return (
