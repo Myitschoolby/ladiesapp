@@ -5,7 +5,7 @@ import ProductsData from '../data/productsData.json';
 import {Context} from '../App';
 
 function Products() {
-    const {addCart, cart} = useContext(Context);
+    const {addCart, cart, search, find} = useContext(Context);
 
     const [filter, setFilter] = useState({
         current: 'Best Sellers',
@@ -23,6 +23,14 @@ function Products() {
     const getProducts = function(page) {
         let count = 0;
         let productsList = ProductsData;
+
+        if (search.length >= 2) {
+            productsList = productsList.filter((product, index) => {
+                return (
+                    product.name.indexOf(search) !== -1 ? true : false
+                );
+            });            
+        }
 
         if (filter.currentIndex !== 2) {
             productsList = productsList.filter((product, index) => {
@@ -163,6 +171,16 @@ function Products() {
     useEffect(() => {
         getProducts(products.page);
     }, []);
+
+    useEffect(() => {
+		if (search.length >= 2) setFilter({
+            ...filter,
+            currentIndex: 2,
+            current: "All Products"
+        });
+
+        getProducts(1);
+	}, [search]);
 
     return (
         <div className="catalog_products">

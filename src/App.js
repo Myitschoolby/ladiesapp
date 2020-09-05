@@ -8,6 +8,8 @@ import Main from './components/Main';
 export const Context = React.createContext();
 
 function App() {
+	const [search, setSearch] = useState('');
+
 	const [cart, setCart] = useState(function() {
 		const obj = {
 			counter: 0,
@@ -51,12 +53,16 @@ function App() {
 		return status;
 	};
 
+	const find = function(query) {
+		setSearch(query);
+	};
+
 	useEffect(() => {
 		localStorage.setItem('cartList', cart.list.join(';'));
 	}, [cart.counter]);
 	
 	return (
-		<Context.Provider value={{addCart, cart}}>
+		<Context.Provider value={{addCart, cart, search, find}}>
 		<div className="app">
 			<Header />
 			<Main />
